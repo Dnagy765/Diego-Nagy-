@@ -1,0 +1,42 @@
+:root{--lima:#A8C62F;--grafite:#333333;--texto:#1F2933;--sec:#52606D;--fundo:#F4F6F3;--sup:#FFFFFF;--faixa:#EEF1EB;--borda:#D9DED4;--foco:#566500;--info:#1D4ED8;--suc:#166534;--aten:#8A5A00;--crit:#B42318;color-scheme:light}
+*{box-sizing:border-box}
+html{font-size:14px}
+body{font-family:"Segoe UI",Arial,sans-serif;font-variant-numeric:tabular-nums;color:var(--texto);background:var(--sup);margin:0;line-height:1.45}
+main{max-width:980px;margin:0 auto;padding:16px}
+.capa{border-top:10px solid var(--lima);padding:24px 0 8px}
+.capa .marca{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--sec);text-transform:uppercase}
+h1{font-size:30px;line-height:1.15;color:var(--grafite);margin:8px 0 4px;font-weight:700}
+.capa .sub{font-size:16px;color:var(--sec);margin:0 0 16px}
+h2{font-size:20px;color:var(--grafite);margin:28px 0 8px;padding-top:10px;border-top:2px solid var(--grafite);font-weight:700;break-after:avoid}
+h3{font-size:16px;color:var(--grafite);margin:18px 0 6px;font-weight:700;break-after:avoid}
+h4{font-size:14px;color:var(--grafite);margin:14px 0 4px;font-weight:700;break-after:avoid}
+p{margin:6px 0}
+ul,ol{margin:6px 0;padding-left:20px}
+li{margin:3px 0}
+table{border-collapse:collapse;width:100%;margin:10px 0 14px;font-size:12px;break-inside:auto}
+caption{caption-side:top;text-align:left;font-weight:600;color:var(--grafite);padding:0 0 4px;font-size:12px}
+th{background:var(--faixa);color:var(--grafite);text-align:left;font-weight:600;border-bottom:2px solid var(--grafite);padding:5px 6px;vertical-align:bottom}
+td{border-bottom:1px solid var(--borda);padding:4px 6px;vertical-align:top}
+tr{break-inside:avoid}
+td[style*="right"],th[style*="right"]{white-space:nowrap}
+strong{font-weight:600;color:var(--grafite)}
+code{font-family:Consolas,"Courier New",monospace;font-size:12px;background:var(--faixa);padding:0 3px;border-radius:3px}
+figure{margin:12px 0 16px;break-inside:avoid}
+figure svg{width:100%;height:auto;display:block;font-family:"Segoe UI",Arial,sans-serif}
+figcaption{font-size:12px;color:var(--sec);margin-top:2px}
+figcaption b{color:var(--grafite);font-weight:600}
+.decisao{background:var(--faixa);border-left:6px solid var(--lima);padding:12px 16px;margin:12px 0 16px;border-radius:6px;break-inside:avoid}
+.decisao p{margin:4px 0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--borda);border-radius:6px;margin:12px 0;break-inside:avoid}
+.kpis div{padding:10px 12px;border-right:1px solid var(--borda)}
+.kpis div:last-child{border-right:0}
+.kpis dt{font-size:12px;color:var(--sec);font-weight:600}
+.kpis dd{margin:2px 0 0;font-size:20px;font-weight:700;color:var(--grafite)}
+.kpis small{display:block;font-size:12px;color:var(--sec);font-weight:400}
+.crit{color:var(--crit);font-weight:600}.aten{color:var(--aten);font-weight:600}.ok{color:var(--suc);font-weight:600}.info{color:var(--info);font-weight:600}
+a{color:var(--info);text-decoration:underline;overflow-wrap:anywhere}
+a:focus-visible{outline:3px solid var(--foco);outline-offset:2px}
+.nota{font-size:12px;color:var(--sec)}
+@media (max-width:640px){.kpis{grid-template-columns:repeat(2,1fr)}.kpis div{border-bottom:1px solid var(--borda)}table{display:block;overflow-x:auto}}
+@page{size:A4;margin:16mm 14mm 16mm 14mm}
+@media print{html{font-size:12.5px}main{max-width:none;padding:0}h2{margin-top:20px}a{color:var(--texto);text-decoration:none}table{font-size:11px}.quebra{break-before:page}}

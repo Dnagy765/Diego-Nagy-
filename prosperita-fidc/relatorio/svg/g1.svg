@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Rentabilidade acumulada do fundo e do CDI"><title>Rentabilidade acumulada do fundo e do CDI</title><desc>Linha do fundo e linha do CDI, de dezembro de 2023 a outubro de 2026.</desc>
+<line x1="52" x2="624" y1="266.0" y2="266.0" stroke="#D9DED4" stroke-width="0.7"/>
+<text x="46" y="270.0" text-anchor="end" font-size="12" fill="#52606D">-40%</text>
+<line x1="52" x2="624" y1="210.4" y2="210.4" stroke="#D9DED4" stroke-width="0.7"/>
+<text x="46" y="214.4" text-anchor="end" font-size="12" fill="#52606D">-20%</text>
+<line x1="52" x2="624" y1="154.9" y2="154.9" stroke="#D9DED4" stroke-width="1.2"/>
+<text x="46" y="158.9" text-anchor="end" font-size="12" fill="#52606D">0%</text>
+<line x1="52" x2="624" y1="99.3" y2="99.3" stroke="#D9DED4" stroke-width="0.7"/>
+<text x="46" y="103.3" text-anchor="end" font-size="12" fill="#52606D">20%</text>
+<line x1="52" x2="624" y1="43.8" y2="43.8" stroke="#D9DED4" stroke-width="0.7"/>
+<text x="46" y="47.8" text-anchor="end" font-size="12" fill="#52606D">40%</text>
+<text x="52.0" y="290" text-anchor="middle" font-size="12" fill="#52606D">12/23</text>
+<text x="152.9" y="290" text-anchor="middle" font-size="12" fill="#52606D">06/24</text>
+<text x="253.9" y="290" text-anchor="middle" font-size="12" fill="#52606D">12/24</text>
+<text x="354.8" y="290" text-anchor="middle" font-size="12" fill="#52606D">06/25</text>
+<text x="455.8" y="290" text-anchor="middle" font-size="12" fill="#52606D">12/25</text>
+<text x="556.7" y="290" text-anchor="middle" font-size="12" fill="#52606D">06/26</text>
+<path d="M52.0,154.6 L68.8,152.0 L85.6,149.7 L102.5,147.4 L119.3,144.8 L136.1,142.4 L152.9,140.1 L169.8,137.5 L186.6,134.9 L203.4,132.4 L220.2,129.7 L237.1,127.3 L253.9,124.4 L270.7,121.3 L287.5,118.2 L304.4,115.2 L321.2,111.8 L338.0,108.2 L354.8,104.6 L371.6,100.4 L388.5,96.6 L405.3,92.5 L422.1,88.1 L438.9,84.5 L455.8,80.3 L472.6,76.2 L489.4,72.6 L506.2,68.2 L523.1,64.3 L539.9,60.3 L556.7,56.1 L573.5,51.6 L590.4,47.4 L607.2,43.2 L624.0,39.1" fill="none" stroke="#52606D" stroke-width="2"/><path d="M52.0,155.1 L68.8,163.8 L85.6,166.6 L102.5,171.8 L119.3,176.8 L136.1,178.5 L152.9,179.8 L169.8,179.5 L186.6,178.2 L203.4,176.3 L220.2,174.0 L237.1,176.4 L253.9,172.9 L270.7,168.9 L287.5,171.7 L304.4,178.1 L321.2,184.9 L338.0,190.6 L354.8,193.0 L371.6,186.6 L388.5,186.3 L405.3,173.7 L422.1,180.2 L438.9,183.7 L455.8,171.5 L472.6,169.4 L489.4,191.1 L506.2,246.8 L523.1,169.1 L539.9,153.9 L556.7,139.4 L573.5,142.6 L590.4,140.6 L607.2,134.9 L624.0,143.9" fill="none" stroke="#1D4ED8" stroke-width="2.5"/><text x="630.0" y="43.1" font-size="12" font-weight="600" fill="#52606D">CDI 41,7%</text><text x="630.0" y="147.9" font-size="12" font-weight="600" fill="#1D4ED8">Fundo 3,9%</text><circle cx="506.2" cy="246.8" r="3.5" fill="#1D4ED8"/><text x="498.2" y="262.8" text-anchor="end" font-size="12" fill="#333333">03/2026: -33,1%</text>
+</svg>
