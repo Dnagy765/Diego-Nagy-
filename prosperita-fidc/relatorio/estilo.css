@@ -17,6 +17,8 @@ table{border-collapse:collapse;width:100%;margin:10px 0 14px;font-size:12px;brea
 caption{caption-side:top;text-align:left;font-weight:600;color:var(--grafite);padding:0 0 4px;font-size:12px}
 th{background:var(--faixa);color:var(--grafite);text-align:left;font-weight:600;border-bottom:2px solid var(--grafite);padding:5px 6px;vertical-align:bottom}
 td{border-bottom:1px solid var(--borda);padding:4px 6px;vertical-align:top}
+td:first-child{font-weight:600;color:var(--grafite)}
+td .crit,td .aten,td .ok{display:inline-block;min-width:9em}
 tr{break-inside:avoid}
 td[style*="right"],th[style*="right"]{white-space:nowrap}
 strong{font-weight:600;color:var(--grafite)}
@@ -39,4 +41,4 @@ a:focus-visible{outline:3px solid var(--foco);outline-offset:2px}
 .nota{font-size:12px;color:var(--sec)}
 @media (max-width:640px){.kpis{grid-template-columns:repeat(2,1fr)}.kpis div{border-bottom:1px solid var(--borda)}table{display:block;overflow-x:auto}}
 @page{size:A4;margin:16mm 14mm 16mm 14mm}
-@media print{html{font-size:12.5px}main{max-width:none;padding:0}h2{margin-top:20px}a{color:var(--texto);text-decoration:none}table{font-size:11px}.quebra{break-before:page}}
+@media print{html{font-size:13px}main{max-width:none;padding:0}h2{margin-top:20px}a{color:var(--texto);text-decoration:none}table{font-size:12px}.quebra{break-before:page}}

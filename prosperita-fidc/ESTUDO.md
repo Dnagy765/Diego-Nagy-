@@ -1,5 +1,7 @@
 # Prosperità FIDC: estudo para a aquisição
 
+> Substituído pelo relatório final em `relatorio/RELATORIO_FINAL.md` (PDF na mesma pasta), que corrige três pontos deste estudo: há bloqueio de R$ 2,24 mi em contas da Jaguafrangos na execução trabalhista do TRT-12; a operação da Polícia Federal atingiu a BMP SCMEPP, não a BMP SCD cedente; e o Consignado Prosperita FIDC não tem vínculo com o grupo.
+
 Data: 26/11/2026. CNPJ do fundo: 53.033.766/0001-39.
 
 Este estudo consolida a conferência dos dados públicos (detalhe em `RELATORIO.md`), o complemento da coleta do Soul (PR #91 do hub, commit `770cb10`) e a pesquisa em fontes abertas feita nesta sessão. As listas do que pedir a cada parte estão em `PEDIDOS_DE_DOCUMENTOS.md`.
@@ -23,7 +25,7 @@ Cinco perguntas decidem a operação:
 
 1. **O dinheiro chega ao fundo sem passar pelo risco da Jaguafrangos?** Hoje não. E a Jaguafrangos foi declarada sucessora de fato do Grupo Pesqueiro, falido, com responsabilidade solidária pelos passivos.
 2. **Quanto da provisão de R$ 691 mil é perda e quanto é critério?** A Finaxis mudou a metodologia em 2026 por recomendação da ANBIMA.
-3. **Os episódios de 08/2025, 12/2025, 01/2026 e 02 a 04/2026 foram só conciliação?** A cota diária chegou a cair 13% a 17% dentro do mês e voltar no fechamento.
+3. **Os episódios de 08/2025, 12/2025, 01/2026 e 02 a 04/2026 foram só conciliação?** A cota diária chegou a cair de 9% a 11% dentro do mês e a subir de 13% a 17% em um dia, no fechamento.
 4. **Quem são os dois cotistas e o que a família controla depois da venda?** Se ela fica com participação e mantém origem e cobrança, o desenho de cotas precisa refletir isso.
 5. **O regulamento pode ser reescrito antes da entrada?** Responsabilidade limitada, conta do fundo, limites, gatilhos e teto para a consultoria.
 
