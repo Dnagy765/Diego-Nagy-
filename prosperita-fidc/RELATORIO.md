@@ -1,6 +1,8 @@
 # PROSPERITÀ FIDC (CNPJ 53.033.766/0001-39): conferência da coleta e respostas da operação
 
-Data: 26/11/2026. Base: coleta pública do Soul no `Dnagy765/hub-diego`, branch `dot/prosperita-fidc-coleta-2026-11-26` (commit `ab1ca53`, 305 arquivos, 1,3 GB). Não há PR aberto nem handoff; a pasta `dossies/prosperita-fidc/` não está na `main`.
+Data: 26/11/2026. Base: coleta pública do Soul no `Dnagy765/hub-diego`, branch `dot/prosperita-fidc-coleta-2026-11-26`, PR #91 em rascunho. A primeira conferência foi feita sobre o commit `ab1ca53` (305 arquivos); esta versão incorpora o complemento do commit `770cb10` (mais 235 arquivos: diário completo, QSA, processos, identificação do cedente e `COLETA.md`), também conferido nos brutos.
+
+O estudo para a operação está em `ESTUDO.md` e as listas de pedidos em `PEDIDOS_DE_DOCUMENTOS.md`.
 
 Convenção usada em todo o texto:
 
@@ -20,10 +22,10 @@ Caminhos `raw/...` e `dados/...` são relativos a `dossies/prosperita-fidc/` no 
 2. **A cota rendeu 3,94% em 35 meses contra 41,70% do CDI.** A TIR do cotista foi 8,3% a.a. Os mesmos aportes a 100% do CDI valeriam R$ 9,67 mi; o PL é R$ 8,82 mi.
 3. **A carteira gera retorno; custo fixo e provisão o consomem.** O resultado antes de provisão foi R$ 1,88 mi desde o início (16,7% a.a. sobre o PL em 2026). Os pisos de taxa custaram 14,4% do PL em 2024 e 4,9% em 2025, e o saldo de PDD é R$ 0,69 mi.
 4. **O fundo não cresceu por falta de capital, com um intervalo de falta de lastro.** Captou R$ 7,73 mi em nove aportes, o último em 08/2025. De 09/2025 a 03/2026 ficou com R$ 1,6 mi parado em média (22% do PL). De 04/2026 em diante está 94% alocado.
-5. **O ativo é CCB com desconto feito pela Jaguafrangos, não duplicata de risco sacado clássico.** Cedente único, 25 maiores devedores com 72% da carteira, prazo médio perto de 290 dias, pagamento em conta de livre movimentação do cedente ou da Jaguafrangos, sem notificação ao devedor.
-6. **O FIF era o cotista único do FIDC até 01/2026.** Foi liquidado em 02/2026 com entrega dos ativos aos seus 2 cotistas, que hoje aparecem no FIDC como 2 pessoas físicas. A identidade não é pública.
+5. **O ativo é CCB com desconto feito pela Jaguafrangos, não duplicata de risco sacado clássico.** Cedente único (BMP SCD), 25 maiores devedores com 72% da carteira, prazo médio perto de 290 dias, pagamento em conta de livre movimentação do cedente ou da Jaguafrangos, sem notificação ao devedor.
+6. **O FIF era o cotista único do FIDC até 01/2026.** Foi liquidado em 02/2026 com entrega dos ativos aos seus 2 cotistas, que hoje aparecem no FIDC como 2 pessoas físicas. A identidade não é pública. A consultoria e agente de cobrança do fundo tem os mesmos dois sócios-administradores da Jaguafrangos.
 7. **A queda de 09 para 10/2026 (R$ 275 mil) é provisão.** A PDD subiu R$ 409 mil com vencidos praticamente estáveis; o resto do mês rendeu R$ 134 mil. Não houve amortização nem resgate.
-8. **Três pontos que a compradora precisa resolver antes de preço:** a decisão do TJMT que reconheceu sucessão empresarial de fato da Jaguafrangos na falência do Grupo Pesqueiro (fonte: cópia em site de notícia, não verificada na origem); a responsabilidade ilimitada do cotista no regulamento vigente; e a conciliação de recebimentos, que em 03/2026 levou a cota a cair 23% e voltar 42% no mês seguinte.
+8. **Três pontos que a compradora precisa resolver antes de preço:** a decisão do TJMT que reconheceu sucessão empresarial de fato da Jaguafrangos na falência do Grupo Pesqueiro (confirmada no Diário de Justiça Eletrônico Nacional); a responsabilidade ilimitada do cotista no regulamento vigente; e a conciliação de recebimentos, que em 03/2026 levou a cota a cair 23% e voltar 42% no mês seguinte.
 
 ---
 
@@ -34,13 +36,13 @@ Caminhos `raw/...` e `dados/...` são relativos a `dossies/prosperita-fidc/` no 
 | 1 | Informe mensal FIDC | **ok** | 24 zips CVM em `raw/fidc/` (2023 e 2024 anuais, 01/2025 a 10/2026 mensais), dicionário de campos, 18 CSVs em `dados/inf_mensal_fidc_tab_*.csv`, manifesto com URL e sha256 | nada |
 | 2 | Cadastro e histórico de prestadores | **parcial** | `registro_fundo_classe.zip` (situação atual dos dois fundos), `cad_fi.csv`, `cad_fi_hist.zip` | `cad_fi` e `cad_fi_hist` não trazem o FIDC (0 linhas); só há histórico do FIF. O histórico de prestadores do FIDC não existe nessa fonte e foi reconstruído por informe mensal e atas (seção 3.f) |
 | 3 | Documentos do Fundos.NET | **ok com ressalvas** | 81 de 81 documentos do FIDC (44 informes mensais XML, 13 trimestrais, 12 de assembleia, 5 regulamentos, 3 DFs, 4 outros). FIF: zero no Fundos.NET; 2 regulamentos e 3 DFs via CVM | 3 URLs da CVM com HTTP 429 (2 regulamentos do FIDC que têm cópia pelo Fundos.NET; regulamento do FIF de 08/04/2024 sem cópia). Ata de 08/04/2024, trimestral do 2T26 e resultado da AGC de 25/05/2026 não existem na fonte |
-| 4 | CDA e informe diário do FIF | **parcial** | CDA: 35 zips (12/2023 a 10/2026). Informe diário: 14 zips (12/2023 a 01/2025) | Informe diário de 02/2025 em diante (22 arquivos listados no índice da CVM salvo e não baixados). Nenhum CSV derivado em `dados/`. Os 49 zips não têm linha em nenhum `fontes_*.csv` (sem URL, sem sha256) |
+| 4 | CDA e informe diário do FIF | **ok** | CDA: 35 zips (12/2023 a 10/2026). Informe diário: 36 zips (12/2023 a 11/2026), 530 dias com dado do FIF, o último em 11/02/2026. CSVs derivados e manifestos com URL e sha256 | nada |
 | 5 | CDI | **ok** | `raw/bcb/sgs_12.json` (série 12, 749 dias), `cdi_diario.csv`, `cdi_mensal.csv` | nada |
-| 6 | Quadro societário | **ausente** | nenhum arquivo | QSA de Jaguafrangos, Prosperita Consultoria, cedente 34.337.707/0001-00, holdings do grupo |
-| 7 | Processos e sanções | **parcial** | Só o que entrou pelo bloco 8: duas decisões do TJMT (cópias de site de notícia), 2 autos do IAT, indexação de 2 ACPs do MPT | Sancionador CVM, PGFN, protestos, busca por CNPJ em tribunais; nada sobre FIDD, Finaxis, Petra ou a consultoria |
+| 6 | Quadro societário | **parcial** | QSA oficial da Receita (dados abertos, 27 linhas) de Prosperita Consultoria, Jaguafrangos, S&PB, Finaxis CTVM, Banco Finaxis e Petra; cadastro e 36 filiais por espelho | Cartões de CNPJ oficiais em PDF; percentuais de participação (o QSA não traz); QSA da BMP e da FIDD |
+| 7 | Processos e sanções | **parcial** | 60 brutos: três processos sancionadores da CVM de 2016 (Finaxis, Petra), cinco atos da ANBIMA (Finaxis, Petra), publicações do Diário de Justiça Eletrônico Nacional sobre a Jaguafrangos (TJMT, TRF4, TRT9, TJPR), notas do MPT | Protestos; distribuição completa por CNPJ; PGFN; dois extratos de julgamento da CVM; nada localizado sobre a FIDD na CVM. 14 downloads do manifesto falharam e não têm arquivo |
 | 8 | Grupo BTZ | **parcial** | 30 brutos, 23 registros em `dados/bloco8_registros.csv` (unidades, habilitações, benefício fiscal GO, Fomento Paraná, autuações) | Faturamento, endividamento e DFs não localizados. 7 brutos citados no manifesto não estão no repositório |
 | 9 | Pedidos não públicos | **ok** | `PEDIDOS.md`, 15 itens, nada enviado | Acrescento itens na seção 5 |
-| – | `COLETA.md` | **ausente** | – | O resumo que o Soul mencionou não está na branch |
+| – | `COLETA.md` | **ok** | índice por bloco, com status e fontes | chegou no complemento |
 
 ---
 
@@ -68,12 +70,13 @@ Caminhos `raw/...` e `dados/...` são relativos a `dossies/prosperita-fidc/` no 
 
 **Da coleta**
 
-- **D1.** `COLETA.md` não existe. Não há handoff nem PR; só a branch.
-- **D2.** Informe diário do FIF incompleto: 14 de 27 meses (o FIF operou de 12/2023 a 02/2026).
-- **D3.** Bloco 4 sem CSV derivado. Extraí as linhas do FIF eu mesmo (`dados/fif_linhas_brutas_cda_diario.tsv`, 619 linhas).
-- **D4.** Os 49 zips de CDA e diário não têm URL nem sha256 em manifesto. Pela regra combinada seriam "não verificado"; mitiguei com o índice de diretório da CVM salvo em `raw/cda/` e `raw/diario/`.
-- **D5.** Sete arquivos citados em `bloco8_fontes.csv` não estão no repositório (respostas HTTP do MPT, do verificador do TJMT, do MAFF e do MAPA). Os registros que dependem deles ficam **não verificados**.
-- **D6.** As duas decisões do TJMT vêm de PDF hospedado em site de notícia (`pontonacurva.com.br`). O verificador oficial respondeu HTTP 503. Conteúdo lido, autenticidade **não verificada na origem**.
+- **D1.** Resolvida no complemento. `COLETA.md` existe e há o PR #91. Na primeira conferência não havia nenhum dos dois.
+- **D2.** Resolvida. O informe diário veio completo; reextraí os 36 zips e as 530 linhas do FIF são idênticas às do CSV do Soul.
+- **D3.** Resolvida. O bloco 4 agora tem CSVs derivados; os 26 registros de cotas do FIDC no CDA do FIF batem com a minha extração.
+- **D4.** Resolvida. Os 71 zips de CDA e diário têm URL e sha256 em manifesto, e os hashes conferem.
+- **D5.** Esclarecida. Sete entradas de `bloco8_fontes.csv` e 14 de `bloco7_fontes.csv` são downloads que falharam, marcados como "não encontrado" no próprio manifesto; não há arquivo. Os registros que dependem só delas ficam **não verificados**.
+- **D6.** Resolvida para o essencial. As decisões do TJMT de 07 e 10/2026 estão nas publicações do Diário de Justiça Eletrônico Nacional arquivadas em `raw/processos/cnj_djen_jaguafrangos_tjmt_1073997.json`, com o mesmo texto das cópias de site de notícia.
+- **D23.** O cadastro de capital, endereço e abertura das empresas (bloco 6) vem de espelho de terceiros, não de cartão oficial. O QSA, sim, é da Receita.
 
 **Dos documentos do próprio fundo** (o Soul coletou certo; o erro é de quem publicou)
 
@@ -255,7 +258,7 @@ Valores em R$ mil. Taxas como informadas na tabela IX (ver D20).
 
 - **Fato.** CCBs. O trimestral de 09/2024 diz "apenas com créditos consignados com formalização através de controle pelo ente consignante e o originador". Os de 12/2024 a 06/2025 dizem "apenas um originador [...] que origina CCBs provenientes da relação de fornecedores de uma cadeia produtiva que atende um único grupo econômico".
 - **Fato.** O regulamento vigente nomeia a Jaguafrangos (CNPJ 85.090.033/0001-22) como Agente de Recebimento, "na qualidade de correspondente bancária da instituição financeira responsável pela concessão de crédito aos seus clientes".
-- **Fato.** Cedente único em todos os meses informados: CNPJ 34.337.707/0001-00. Nenhum documento coletado dá o nome. Identidade **não verificada**.
+- **Fato.** Cedente único em todos os meses informados: CNPJ 34.337.707/0001-00, da BMP Sociedade de Crédito Direto S.A. O nome não aparece em nenhum documento do fundo; a identificação vem da ficha do Banco Central arquivada em `raw/bcb/bcb-bmp-34337707.html`.
 - **Fato.** A FIDD descreve a operação assim nos trimestrais de 12/2024 a 06/2025: "veículo de financiamento para operações de crédito para fornecedores de insumos para um grupo econômico. As relações configuram o que tipicamente podemos chamar de operações “risco-sacado".
 - **Leitura.** O devedor formal é o fornecedor que emite a CCB, não a Jaguafrangos: se ela fosse a sacada, a concentração por devedor seria de 100% em um nome, e o informe mostra o maior devedor com 10%. A Jaguafrangos retém a parcela do que deve ao fornecedor e repassa ao fundo. O risco é do tomador, com a Jaguafrangos no caminho do dinheiro. Se ela tem obrigação própria de pagar (aceite ou confirmação), só o contrato de cessão diz.
 
@@ -308,6 +311,8 @@ Fonte: DFs auditadas (`raw/fundosnet/documentos/FIDC/862759.pdf` e `1139125.pdf`
 **Consultoria (Prosperita Consultoria e Cobrança, CNPJ 57.938.381/0001-71)**
 
 - **Fato.** Nomeada como consultora especializada e agente de cobrança na DF de 2025 e no regulamento de 07/2026, "contratada pela Gestora, em nome do Fundo". Sede em Londrina.
+- **Fato.** Sócios-administradores: Paulo Sergio Botazzari e Sidnei Donizete Bottazzari, os mesmos da Jaguafrangos. Aberta em 01/11/2024. Fonte: QSA da Receita, `raw/qsa/receita-nov2026-qsa-linhas-originais.csv`.
+- **Fato.** O regulamento veda adquirir créditos "originados ou cedidos" pela consultoria "ou por partes a qualquer um deles relacionadas" (10.6). A Jaguafrangos, que origina como correspondente da BMP, é parte relacionada da consultoria.
 - **Fato.** Nenhum regulamento fixa a remuneração. O vigente a lista como encargo do fundo, fora das taxas de administração e gestão e sem teto.
 - **Fato.** As DFs de 2024 e 2025 não têm linha de consultoria nem de cobrança. "Outras despesas" somam R$ 7 mil e R$ 8 mil.
 - **Leitura.** Até 2025 a consultoria não foi paga pelo fundo. Ou é remunerada na origem (diferença entre a taxa cobrada do tomador e a taxa de cessão ao fundo), ou pelo grupo. Com taxa de cessão de 17% a 21% ao ano num crédito a fornecedor, há espaço para um spread retido antes do fundo, mas o valor não se infere de dado público. O risco para a compradora é o inverso: o regulamento novo permite passar a cobrar do fundo sem limite.
@@ -316,12 +321,13 @@ Fonte: DFs auditadas (`raw/fundosnet/documentos/FIDC/862759.pdf` e `1139125.pdf`
 
 - **Fato.** Sim, e era o único. O CDA do FIF mostra cotas do FIDC em todos os 26 meses de 12/2023 a 01/2026, em quantidade igual ao total emitido pelo FIDC (950,00 em 12/2023; 3.654,78 em 12/2024; 8.558,78 em 01/2026). Representavam 95% a 100% do PL do FIF. Fonte: `dados/fif_mensal.csv`.
 - **Fato.** Entre os fundos que entregam CDA à CVM, nenhum outro cita o CNPJ do FIDC e nenhum cita o do FIF (35 meses varridos). FIDCs e FIPs não entregam CDA e ficam fora desse teste.
-- **Fato.** O FIF tinha 2 cotistas em todos os fechamentos de mês de 12/2023 a 01/2025 (informe diário). Público-alvo: "grupo reservado de Investidores Profissionais, unidos por vínculo societário/familiar ou vínculo por interesse único e indissociável".
+- **Fato.** O FIF tinha 2 cotistas em todos os fechamentos de mês de 12/2023 a 01/2026 (informe diário completo, `dados/fif_diario_completo.csv`). Captou R$ 7.800 mil em onze aportes.
+- **Fato.** Em 02/02/2026 o informe diário do FIF registra resgate de R$ 8.023.116,10 e zero cotistas. Público-alvo: "grupo reservado de Investidores Profissionais, unidos por vínculo societário/familiar ou vínculo por interesse único e indissociável".
 - **Fato.** A AGE do FIF de 02/02/2026 aprovou a liquidação antecipada com "entrega de todos os ativos aos Cotistas, proporcionalmente à sua participação". O cadastro da CVM registra o FIF em liquidação em 02/02/2026 e cancelado em 08/06/2026.
 - **Fato.** O informe mensal do FIDC passa de 1 cotista ("outros fundos") em 01/2026 para 2 cotistas pessoa física em 02/2026, sem captação nem resgate.
 - **Leitura.** Os 2 cotistas atuais do FIDC são os 2 ex-cotistas do FIF, que receberam as cotas em espécie.
 - **Não verificado.** Os nomes. Nenhuma fonte pública identifica cotistas; as atas falam em "o Cotista" e a lista de presença não é publicada. Depende do item 1 do `PEDIDOS.md`.
-- **Não verificado.** A proporção entre os dois e o vínculo com a família Botazzari, que não aparece em nenhum documento coletado.
+- **Não verificado.** A proporção entre os dois e se são da família Botazzari. O vínculo da família com o fundo está documentado só pela consultoria e pela Jaguafrangos; nenhum documento a liga às cotas.
 
 ### f) Histórico de prestadores
 
@@ -393,33 +399,25 @@ Auditoria:
 - **Fato.** A cobertura dos vencidos pela PDD passou de 33% para 79%.
 - **Fato.** A carteira a vencer encolheu R$ 437 mil e o caixa subiu R$ 516 mil: as aquisições do mês (R$ 281 mil) não repuseram as liquidações.
 - **Leitura.** Cerca de R$ 197 mil da safra de vencidos de setembro não curou e rolou para a faixa de 31 a 60 dias, e a política da Finaxis parece provisionar o saldo inteiro do devedor em atraso (arrasto), não só a parcela vencida. Isso explica a PDD subir muito mais do que os vencidos.
-- **Leitura.** É a primeira subida forte de provisão sob a metodologia da Finaxis. Pode ser perda real ou critério mais conservador; os dados públicos não separam as duas coisas. Depende da memória de cálculo.
+- **Fato.** A ANBIMA expediu carta de recomendação ao Grupo Finaxis, aceita em 20/04/2026, por não aplicar o efeito vagão "de forma tempestiva e abrangente" nos FIDCs que administra. A Finaxis se comprometeu a implantar nova metodologia de PDD, com prazo final de 165 dias, que cai em 02/10/2026. Fonte: `raw/processos/anbima_grupo_finaxis_CR_AGRT003_2026.pdf`.
+- **Leitura.** A alta de outubro é compatível com a entrada em vigor dessa metodologia. Pode ser perda real ou critério mais conservador; os dados públicos não separam as duas coisas. Depende da memória de cálculo.
 
 ---
 
 ## 4. Outros achados relevantes para a compradora
 
-- **Sucessão da Jaguafrangos no Grupo Pesqueiro.** Decisão do TJMT de 07/2026 reconheceu "sucessão empresarial de fato" da Jaguafrangos em relação às sociedades falidas e a incluiu no processo; a de 10/2026 rejeitou integralmente os embargos da Jaguafrangos e manteve a ordem para a Administradora Judicial individualizar "contas bancárias e demais ativos" ligados à sucessão. A mesma decisão esclarece que isso "não equivale à decretação autônoma de sua falência". A notícia que acompanha fala em passivo de R$ 200 mi. Fonte: `raw/btz/tjmt_decisao_espelho_202610.pdf`, cópia de site de notícia. **Não verificado na origem.** Como a Jaguafrangos recebe os pagamentos do fundo em conta própria, uma constrição sobre as contas dela alcança o fluxo do FIDC.
+- **Sucessão da Jaguafrangos no Grupo Pesqueiro.** Processo 1073997-19.2025.8.11.0041, TJMT. Decisão de 07/2026 reconheceu "sucessão empresarial de fato" da Jaguafrangos, com responsabilidade solidária pelos passivos da massa e possível extensão a outras sociedades do Grupo BTZ e a pessoas naturais. A de 10/2026 rejeitou integralmente os embargos da Jaguafrangos, esclareceu que isso "não equivale à decretação autônoma de sua falência" e manteve a ordem de individualizar "contas bancárias e demais ativos". Fonte: Diário de Justiça Eletrônico Nacional, `raw/processos/cnj_djen_jaguafrangos_tjmt_1073997.json`. Como a Jaguafrangos recebe os pagamentos do fundo em conta própria, uma constrição sobre as contas dela alcança o fluxo do FIDC.
+- **Multa da Lei Anticorrupção.** TRF4, processo 5019968-85.2024.4.04.7001, 17/11/2026: restabelecida multa de R$ 19.850.025,41 aplicada à Jaguafrangos em processo de responsabilização do Ministério da Agricultura. Fonte: `raw/processos/cnj_djen_jaguafrangos_federal_5019968.json`.
+- **Variação diária da cota.** O informe diário do FIF mostra quedas de 13% a 17% dentro do mês em 12/2025 e 01/2026, revertidas em um dia no fechamento. Detalhe em `ESTUDO.md`, seção 5.
 - **FIDC Agro Paraná.** O informativo da Fomento Paraná de 11/2026 lista "Jaguafrangos: Fomento Paraná R$ 40 mi; Patrimônio do FIDC R$ 200 mi" na linha "aguardam assinatura". É um veículo para financiar integrados com cotista sênior público e taxa subsidiada. Pode disputar o mesmo lastro do Prosperità. Fonte: `raw/btz/fomento_pr_nov2026.pdf`, p. 10.
 - **Homônimo novo.** "Consignado Prosperita FIDC – Responsabilidade Limitada" (CNPJ 68.543.762/0001-78), registrado em 12/08/2026, administrador Hemera DTVM, gestor Solis. Vínculo com a Prosperita Consultoria **não verificado**. Fonte: `raw/cadastro/registro_fundo_classe.zip`.
 - **Correspondente bancário.** A consulta do Soul ao Banco Central por Jaguafrangos como correspondente voltou vazia (`raw/btz/bcb_jaguafrangos_*.json`), embora o regulamento a qualifique assim.
 
 ---
 
-## 5. Pedidos a acrescentar ao `PEDIDOS.md`
+## 5. Pedidos de documentos
 
-1. Balancetes mensais de 02 a 04/2026 e a conciliação dos "DC recebidos a identificar".
-2. Memória de cálculo da PDD de 03/2026 e de 10/2026; política de provisão da Finaxis aplicada ao fundo.
-3. Relatório da auditoria de transferência (devido até cerca de 25/10/2026) e DF de 31/08/2026.
-4. Ata ou termo da AGC de 25/05/2026 e a carta de renúncia da FIDD de 29/04/2026.
-5. Identificação do cedente 34.337.707/0001-00, contrato de cessão e contrato de correspondente com a Jaguafrangos.
-6. Extrato da conta de recebimento e prazo efetivo de repasse da Jaguafrangos ao fundo, mês a mês.
-7. Lista nominal dos 25 maiores devedores e vínculo de cada um com o grupo.
-8. Histórico de recompras por mês (valor, título, quem pagou).
-9. Contrato da Prosperita Consultoria: quem paga, quanto, desde quando; sócios e vínculo com os cotistas.
-10. Apêndice de amortização citado no regulamento e parecer sobre a responsabilidade ilimitada do cotista.
-11. Andamento do processo de falência do Grupo Pesqueiro no TJMT, com número CNJ, e qualquer constrição sobre contas da Jaguafrangos.
-12. Relação do grupo com o Consignado Prosperita FIDC e com o FIDC Agro Paraná.
+As listas por destinatário estão em `PEDIDOS_DE_DOCUMENTOS.md` (80 itens em oito listas, com prioridade e a dúvida que cada um resolve).
 
 ---
 
@@ -441,9 +439,10 @@ python3 -I scripts/tabelas_md.py out/dados/painel_mensal_fidc.csv out
 |---|---|
 | `dados/painel_mensal_fidc.csv` | 35 meses, 64 colunas: PL, cota, CDI, alocação, aquisições, aging, PDD, resultado |
 | `dados/fif_mensal.csv` | PL do FIF, cotas do FIDC detidas, cotistas, captação |
+| `dados/fif_diario_completo.csv` | 530 dias de cota, PL, captação, resgate e cotistas do FIF |
 | `dados/fidc_tab_viii_25_maiores.csv` | 25 maiores exposições por mês |
 | `dados/fif_cda_demais_itens.csv` | disponibilidades e provisões de taxas do FIF |
-| `dados/fif_linhas_brutas_cda_diario.tsv` | 619 linhas brutas do FIF nos zips da CVM |
+| `dados/fif_linhas_brutas_cda_diario.tsv` | 872 linhas brutas do FIF nos zips da CVM |
 | `dados/reextracao_informe_mensal/` | as 18 tabelas reextraídas, base da comparação com o Soul |
 
 Leituras de PDF: regulamentos, DFs e trimestrais foram lidos por três agentes auxiliares com roteiro de extração; conferi por busca no texto todas as citações que entraram aqui. Os balanços das DFs de 2024 e 2025 são imagem no PDF; os valores vêm da leitura visual das páginas e batem com as notas em texto e com o informe mensal de dezembro.
